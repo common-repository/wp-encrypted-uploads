@@ -1,0 +1,97 @@
+<div class="ancenc-wrap">
+    <div class="ancenc-header wp-ancenc-page-header">
+        <h1 class="ancenc-header-title">DASHBOARD</h1>
+        <div class="ancenc-actions-right">
+            <a href="https://wordpress.org/support/plugin/wp-encrypted-uploads/"
+               class="ancenc-button ancenc-button-ghost" target="_blank">
+                Support </a>
+        </div>
+    </div>
+
+    <div class="ancenc-floating-notices">
+        <div role="alert" id="ancenc-ajax-notice" class="ancenc-notice" aria-live="assertive">
+            <div class="ancenc-notice-content">
+                <div class="ancenc-notice-message"><span class="ancenc-notice-icon dashicons-info ancenc-md"
+                                                         aria-hidden="true"></span>
+                    <p>Your settings have been updated!</p>
+                </div>
+            </div>
+        </div>
+        <div role="alert" id="wp-ancenc-s3support-alert" class="ancenc-notice" aria-live="assertive"></div>
+    </div>
+
+    <div class="ancenc-row-with-sidenav">
+        <div class="ancenc-sidenav ancenc-sidenav">
+            <ul class="ancenc-vertical-tabs ancenc-sidenav-hide-md">
+                <li class="ancenc-vertical-tab ancenc-settings current">
+                    <a href="#">
+                        Settings </a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div id="ancenc-box-bulk-settings" class="ancenc-bulk-settings ancenc-box ancenc-settings-wrapper ">
+                <div class="ancenc-box-header">
+                    <h3 class="ancenc-box-title">Settings</h3>
+                </div><!-- end ancenc-box-title -->
+                <div class="ancenc-box-body">
+                    <form id="wp-ancenc-settings-form" method="post">
+                        <input type="hidden" name="settings_section" id="settings_section" value="general">
+
+                        {{#available_settings}}
+                            <div class="ancenc-box-settings-row wp-ancenc-basic ">
+                                <div class="ancenc-box-settings-col-1">
+                                    <span class="ancenc-settings-label ">{{title}}</span>
+                                    <span class="ancenc-description">{{description}}</span>
+                                </div>
+                                <div class="ancenc-box-settings-col-2" id="column-wp-ancenc-bulk">
+                                    {{#options}}
+                                        {{#single}}
+                                            {{#check_type}}
+                                                {{>toggle_control}}
+                                            {{/check_type}}
+                                            {{^check_type}}
+                                                <input name="{{name}}" type="{{type}}" value="{{value}}"
+                                                    {{#disabled}}disabled{{/disabled}} {{#size}}size="{{size}}"{{/size}} />
+                                            {{/check_type}}
+                                        {{/single}}
+                                        {{^single}}
+                                            <ul>
+                                                {{#children}}
+                                                    <li>{{#check_type}}{{>toggle_control}}{{/check_type}}</li>
+                                                {{/children}}
+                                            </ul>
+                                        {{/single}}
+                                    {{/options}}
+                                    <!-- Print/Perform action in right setting column -->
+                                </div>
+                            </div>
+                        {{/available_settings}}
+
+                    </form>
+                </div><!-- end box_content_class -->
+
+                <div class="ancenc-box-footer">
+
+                    <div class="ancenc-actions-right">
+                        <button type="submit" class="ancenc-button ancenc-button-blue" id="wp-ancenc-save-settings"
+                                aria-describedby="ancenc-submit-description" data-msg="">
+                            Update settings
+                        </button>
+
+                        <span class="ancenc-icon-loader ancenc-loading ancenc-hidden"></span>
+                    </div>
+                </div><!-- end ancenc-box-footer -->
+
+
+            </div><!-- end box-bulk-settings -->
+        </div>
+    </div><!-- end row -->
+
+
+    <div class="ancenc-footer">
+        Plugin by <a href="https://ahmedgeek.com" target="_blank">AhmedGeek</a>
+    </div>
+
+    <input type="hidden" id="wp_ancenc_options_nonce" name="wp_ancenc_options_nonce" value="{{update_nonce}}">
+</div>

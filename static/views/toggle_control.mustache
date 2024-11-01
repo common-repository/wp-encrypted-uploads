@@ -1,0 +1,11 @@
+<label for="wp-ancenc-auto" class="ancenc-toggle">
+    <input name="{{name}}" type="{{type}}" value="{{value}}"
+           {{#disabled}}disabled{{/disabled}}
+           aria-labelledby="wp-ancenc-auto-label"
+           aria-describedby="wp-ancenc-auto-desc" {{#checked}}checked="checked"{{/checked}}>
+    <span class="ancenc-toggle-slider" aria-hidden="true"></span>
+    <span id="ancenc-auto-label" class="ancenc-toggle-label">
+        {{label}}
+    </span>
+</label>
+<span class="ancenc-hint-text">{{hint}}</span>

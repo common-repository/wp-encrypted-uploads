@@ -1,0 +1,7 @@
+
+# BEGIN WP-Encrypted-Uploads
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule wp_ancenc_(.?)*$ /index.php?ancenc_file=$0&ancenc_action=ancenc_get_file
+</IfModule>
+# END WP-Encrypted-Uploads

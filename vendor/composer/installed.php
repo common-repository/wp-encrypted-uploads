@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'anciented/wp-encrypted-uploads',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '1d2a96783e15670e21db4aea34e9b1311154d9b5',
+        'type' => 'wordpress-plugin',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'anciented/wp-encrypted-uploads' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '1d2a96783e15670e21db4aea34e9b1311154d9b5',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'mustache/mustache' => array(
+            'pretty_version' => 'v2.14.2',
+            'version' => '2.14.2.0',
+            'reference' => 'e62b7c3849d22ec55f3ec425507bf7968193a6cb',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../mustache/mustache',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'rdlowrey/auryn' => array(
+            'pretty_version' => 'v1.4.4',
+            'version' => '1.4.4.0',
+            'reference' => 'dae57592229d313b59414a2c8334e61e6eb00928',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../rdlowrey/auryn',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
